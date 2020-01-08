@@ -582,7 +582,7 @@ function evaluate!(mach::Machine, resampling::ResamplingStrategy,
                    weights, rows, verbosity, args...)
 
     y = mach.args[2]
-    _rows = actual_rows(rows, length(y), verbosity)
+    _rows = actual_rows(rows, size(y)[1], verbosity)
 
     return evaluate!(mach::Machine,
                      train_test_pairs(resampling, _rows, mach.args...),
